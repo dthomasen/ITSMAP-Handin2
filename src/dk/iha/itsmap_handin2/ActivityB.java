@@ -18,10 +18,10 @@ public class ActivityB extends Activity{
         super.onCreate(savedInstanceState);
         stopService(new Intent(this, AlarmService.class));
         setContentView(R.layout.activityb);
-//        AudioManager audioManager = (AudioManager) getSystemService(ActivityB.AUDIO_SERVICE); 
-//        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 10, 0);
-//        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.alarm);
-//        mp.start();
+        AudioManager audioManager = (AudioManager) getSystemService(ActivityB.AUDIO_SERVICE); 
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 10, 0);
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.alarm);
+        mp.start();
         TextView messageFromA = (TextView) findViewById(R.id.MessageFromA);
         messageFromA.setText(getIntent().getExtras().getString("messageFromA"));
     }
